@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lõputöö extension for Chrome</title>
+    <meta charset="utf-8"/>
+    <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans"
+            rel="stylesheet"
+            type="text/css"
+    />
+    <link
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous"
+    />
+    <style>
+        /* Modal Structure */
+
+        html,
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            text-align: left;
+            margin: 0;
+            min-height: 180px;
+            padding-left: 5px;
+            padding-right: 5px;
+            width: 400px;
+            background: #f5f7fa;
+        }
+
+        h1 {
+            font-family: "Menlo", monospace;
+            font-size: 22px;
+            font-weight: 400;
+            margin: 0;
+            color: #2f5876;
+        }
+
+        h2 {
+            font-family: "Menlo", monospace;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+            color: #2f5876;
+        }
+        h2 span {
+            border-bottom: 1px solid black;
+        }
+
+        a:link,
+        a:visited {
+            color: #000000;
+            outline: 0;
+            text-decoration: none;
+        }
+
+        img {
+            width: 30px;
+        }
+
+        .modal-header {
+            align-items: center;
+            border-bottom: 0.5px solid #dadada;
+        }
+
+        .logo {
+            padding: 16px;
+        }
+
+        .version {
+            color: #444;
+            font-size: 18px;
+        }
+        .flex .fa {
+            font-size: 40px;
+            color: #2f5876;
+        }
+        button {
+            height: 30px;
+            width: 70px;
+            background: none; /* This removes the default background */
+            color: #313131;
+            border: 1px solid #313131;
+            border-radius: 50px; /* This gives our button rounded edges */
+            font-size: 12px;
+            cursor: pointer;
+        }
+        form {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body id="body">
+<h2>Meeldivat kasutust!</h2>
+<div style="padding-top: 10px;">
+    Sisesta sõna: <input id="word" type="text">
+    <input id="test" value="Otsi" type="button">
+</div>
+<script src="popup.js"></script>
+
+<div id="show_response"></div>
+
+<div id="tsSynod"></div>
+
+<div id="similarwords"></div>
+
+<div id="hyponyms"></div>
+
+<div id="examples"></div>
+
+<div id="definition"></div>
+
+<div id="antonyym"></div>
+
+
+
+
+
+<div class="modal-header">
+    <h2 class="logo">
+        Sarnaste sõnade laiendus
+        <span class="version">(1.1.0)</span>
+    </h2>
+</div>
+
+
+
+</body>
+</html>
