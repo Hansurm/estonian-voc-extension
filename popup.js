@@ -4,10 +4,12 @@ var el1 = document.getElementById('test');
 
 if(el1){
     el1.addEventListener("click", async function(){
+        // Võtame päritava sõna argumendiks.
         const word = document.getElementById("word").value;
+        //Teeme päringu keeleressursside serverisse, ootame vastust.
         const response = await fetch(`http://prog.keeleressursid.ee/psvchromeextension/test.php?word=${word}`);
         const json = (response.ok) ? await response.json() : undefined;
-
+        //Kui päringu vastuse pikkus on 0, kuvame veateate.
         if (Object.keys(json).length === 0 && json.constructor === Object) {
             document.querySelector('#antonyym').innerHTML = '';
             document.querySelector('#hyponyms').innerHTML = '';
@@ -22,6 +24,7 @@ if(el1){
 
             return;
         }
+        //Kui päringu pikkus pole 0, tühjendame kõik väljad, juhul kui on tehtud eelnevalt mingi päring, seejärel kuvame uue info
         var d = JSON.parse(json);
         const test = Object.keys(d);
         document.querySelector('#show_response').innerHTML = ``;
@@ -31,6 +34,7 @@ if(el1){
         document.querySelector('#definition').innerHTML = '';
         document.querySelector('#similarwords').innerHTML = '';
         document.querySelector('#tsSynod').innerHTML = '';
+        //Kuvame ainult väljad, kus on ka infot mida kuvada, ehk vastava listi pikkus > 0
         if (d.tsantonyym.length > 0){
             if (d.tsantonyym===word){
                 document.querySelector('#antonyym').innerHTML = ``;

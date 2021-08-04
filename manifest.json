@@ -2,7 +2,7 @@
     "manifest_version": 2,
   
     "name": "Estonian vocabulary extension",
-    "description": "This extension is meant for estonian speaking users, who would like to find more information about an estonian word.",
+    "description": "This extension is meant for estonian speaking or learning users, who would like to find more information about an estonian word.",
     "version": "1.1",
     "icons": {"128": "icon.png"},
   
