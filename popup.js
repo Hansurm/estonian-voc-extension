@@ -6,8 +6,9 @@ if(el1){
     el1.addEventListener("click", async function(){
         // Võtame päritava sõna argumendiks.
         const word = document.getElementById("word").value;
+        const lowercase = word.toLowerCase();
         //Teeme päringu keeleressursside serverisse, ootame vastust.
-        const response = await fetch(`http://prog.keeleressursid.ee/psvchromeextension/test.php?word=${word}`);
+        const response = await fetch(`http://prog.keeleressursid.ee/psvchromeextension/test.php?word=${lowercase}`);
         const json = (response.ok) ? await response.json() : undefined;
         //Kui päringu vastuse pikkus on 0, kuvame veateate.
         if (Object.keys(json).length === 0 && json.constructor === Object) {
